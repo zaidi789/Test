@@ -1,3 +1,23 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native", // Ensures JSX is handled correctly
+    "lib": ["es2015", "dom"], // Includes DOM definitions required for React Native
+    "moduleResolution": "node", // Use Node.js-style module resolution
+    "noEmit": true, // Prevents outputting files during compilation
+    "skipLibCheck": true, // Skips type checking of all declaration files (*.d.ts)
+    "strict": true, // Enable all strict type-checking options
+    "target": "es6", // Set the JavaScript language version for emitted JavaScript and included lib.d.ts
+    "baseUrl": "./",
+    "paths": {
+      "@react-native/metro-config": ["node_modules/@react-native/metro-config"],
+      "metro-config/*": ["node_modules/metro-config/*"]
+    }
+  },
+  "include": [
+    "src/**/*.tsx",
+    "src/**/*.ts"
+, "src/navigations/Stack/MainStack.js", "src/navigations/Screens/ReviewScreen.js"  ],
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js"]
 }

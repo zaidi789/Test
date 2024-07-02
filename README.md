@@ -108,9 +108,8 @@ To run this project, you will need to have Node.js and React Native installed on
    ```bash
    git clone https://github.com/your-repository/job-posting-app.git
 
-## Run this command on your app directory terminal to make server and then attached your ip and then you use api to send data or post your job 
+## Run this command on your app directory terminal to make server and then attached your ip where api call on ReviewScreen.js and then you use api to send data or post your job 
 
 npm install -g json-server
 
 json-server --watch db.json --port 3000
-

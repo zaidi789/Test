@@ -96,6 +96,55 @@
       "jobType": "part_time",
       "education": "masters",
       "experience": "entry"
+    },
+    {
+      "id": "bf35",
+      "title": "React Native Developer",
+      "description": "React native Developer role at our company and first you have to perform one task to show your ability and skills etc",
+      "skills": [
+        "React native",
+        "Redux",
+        "Hookd"
+      ],
+      "jobType": "full_time",
+      "education": "masters",
+      "experience": "senior"
+    },
+    {
+      "id": "dc65",
+      "title": "React Native Developer",
+      "description": "This job reletaed to React Native Developer but firstly you have to perform some task to show your skilss and make code for some screen to show your coding way ",
+      "skills": [
+        "React nAtive",
+        "Redux",
+        "React"
+      ],
+      "jobType": "part_time",
+      "education": "bachelors",
+      "experience": "mid"
+    },
+    {
+      "id": "218f",
+      "title": "React Native Developer",
+      "description": "hhsa dwb dhwjd wdwjhd wwdb wdwdjwfwwfw dwdwdnwd wdwfwfnbw fwfwfwfnwf wfwbfwfwfwfwf",
+      "skills": [
+        "Redux",
+        "React NAtive"
+      ],
+      "jobType": "part_time",
+      "education": "masters",
+      "experience": "entry"
+    },
+    {
+      "id": "d55f",
+      "title": "test",
+      "description": "thisis test description\n",
+      "skills": [
+        "qweqwe"
+      ],
+      "jobType": "part_time",
+      "education": "masters",
+      "experience": "entry"
     }
   ],
   "skills": []
