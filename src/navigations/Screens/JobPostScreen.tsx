@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, {useState, useCallback} from 'react';
 import {
   ScrollView,
   View,
@@ -9,13 +9,17 @@ import {
   SafeAreaView,
   ActivityIndicator,
   FlatList,
-  ListRenderItemInfo
+  ListRenderItemInfo,
 } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
+import {Picker} from '@react-native-picker/picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import ProgressBar from '../../components/ProgressBar';
-import { useSteps } from '../../context/StepContext';
-import { useNavigation, useFocusEffect, NavigationProp } from '@react-navigation/native';
+import {useSteps} from '../../context/StepContext';
+import {
+  useNavigation,
+  useFocusEffect,
+  NavigationProp,
+} from '@react-navigation/native';
 
 interface JobData {
   title: string;
@@ -37,7 +41,7 @@ const JobPostScreen: React.FC = () => {
   const [experience, setExperience] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const totalSteps: number = 3;
-  const { currentStep, setCurrentStep } = useSteps();
+  const {currentStep, setCurrentStep} = useSteps();
 
   useFocusEffect(
     useCallback(() => {
@@ -47,19 +51,17 @@ const JobPostScreen: React.FC = () => {
       setJobType('');
       setEducation('');
       setExperience('');
-      return () => { };
-    }, [])
+      return () => {};
+    }, []),
   );
 
-
-
   const removeSkill = (skill: string) => {
-    const filteredSkills = skills.filter((s) => s !== skill);
+    const filteredSkills = skills.filter(s => s !== skill);
     setSkills(filteredSkills);
     console.log('Skills after removal:', filteredSkills);
   };
 
-  const renderSkill = ({ item }: { item: string }) => (
+  const renderSkill = ({item}: {item: string}) => (
     <View style={styles.skillChip}>
       <Text style={styles.skillText}>{item}</Text>
       <TouchableOpacity onPress={() => removeSkill(item)}>
@@ -67,7 +69,6 @@ const JobPostScreen: React.FC = () => {
       </TouchableOpacity>
     </View>
   );
-
 
   const addSkill = () => {
     if (skillInput.trim() && !skills.includes(skillInput)) {
@@ -77,9 +78,6 @@ const JobPostScreen: React.FC = () => {
       console.log('Skills after addition:', updatedSkills);
     }
   };
-
-
-
 
   const navigateToPreview = () => {
     setCurrentStep(2);
@@ -91,7 +89,7 @@ const JobPostScreen: React.FC = () => {
       education: education,
       experience: experience,
     };
-    navigation.navigate('Job Review Screen', { jobData });
+    navigation.navigate('Job Review Screen', {jobData});
   };
 
   if (isLoading) {
@@ -105,13 +103,19 @@ const JobPostScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity>
           <Icon name="chevron-left" size={20} color="black" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Post a Job</Text>
       </View>
-      <ProgressBar currentStep={currentStep} totalSteps={totalSteps} labels={['Details', 'Review', 'Submit']} />
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <ProgressBar
+        currentStep={currentStep}
+        totalSteps={totalSteps}
+        labels={['Details', 'Review', 'Submit']}
+      />
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Job Title</Text>
           <TextInput
@@ -129,7 +133,7 @@ const JobPostScreen: React.FC = () => {
             style={[styles.input, styles.descriptionInput]}
             placeholder="Enter job description here..."
             multiline
-            textAlignVertical='top'
+            textAlignVertical="top"
           />
         </View>
         <View style={styles.inputContainer}>
@@ -152,7 +156,6 @@ const JobPostScreen: React.FC = () => {
             horizontal
             style={styles.skillsList}
           />
-
         </View>
         <View style={styles.inputContainer}>
           <Text style={styles.label}>Job Type</Text>
@@ -195,84 +198,84 @@ const JobPostScreen: React.FC = () => {
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderBottomColor: '#ccc'
+    borderBottomColor: '#ccc',
   },
   headerTitle: {
     flex: 1,
     left: 20,
     fontSize: 18,
     fontWeight: 'bold',
-    color: 'black'
+    color: 'black',
   },
   descriptionInput: {
     height: 320,
     paddingTop: 10,
-    textAlign: 'left'
+    textAlign: 'left',
   },
   centered: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   container: {
     flex: 1,
-    padding: 10
+    padding: 10,
   },
   contentContainer: {
-    paddingBottom: 20
+    paddingBottom: 20,
   },
   inputContainer: {
-    marginBottom: 20
+    marginBottom: 20,
   },
   label: {
     fontSize: 16,
     marginBottom: 5,
-    color: '#111'
+    color: '#111',
   },
   input: {
     fontSize: 16,
     backgroundColor: '#F6F5F2',
     borderRadius: 8,
-    padding: 10
+    padding: 10,
   },
   picker: {
     backgroundColor: '#F6F5F2',
-    borderRadius: 8
+    borderRadius: 8,
   },
   button: {
     backgroundColor: 'green',
     padding: 15,
     alignItems: 'center',
     borderRadius: 5,
-    marginTop: 10
+    marginTop: 10,
   },
   buttonText: {
     color: 'white',
-    fontSize: 16
+    fontSize: 16,
   },
   skillInputContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    position: 'relative'
+    position: 'relative',
   },
   skillInput: {
     flex: 1,
     paddingRight: 40,
     backgroundColor: '#F6F5F2',
-    borderRadius: 8
+    borderRadius: 8,
   },
   addSkillButton: {
     position: 'absolute',
@@ -280,7 +283,7 @@ const styles = StyleSheet.create({
     top: 6,
     backgroundColor: '#32CD32',
     padding: 7,
-    borderRadius: 5
+    borderRadius: 5,
   },
   skillChip: {
     flexDirection: 'row',
@@ -288,15 +291,15 @@ const styles = StyleSheet.create({
     padding: 5,
     backgroundColor: '#f0f0f0',
     borderRadius: 10,
-    marginRight: 5
+    marginRight: 5,
   },
 
   skillText: {
-    marginRight: 5
+    marginRight: 5,
   },
   skillsList: {
-    marginTop: 10
-  }
+    marginTop: 10,
+  },
 });
 
 export default JobPostScreen;

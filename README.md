@@ -2,7 +2,7 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
 ## Step 1: Start the Metro Server
 
@@ -78,9 +78,6 @@ To learn more about React Native, take a look at the following resources:
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
 
-
-
-
 # Job Posting App
 
 ## Description
@@ -104,11 +101,7 @@ This Job Posting App allows users to create, review, and submit job postings whi
 
 To run this project, you will need to have Node.js and React Native installed on your machine.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repository/job-posting-app.git
-
-## Run this command on your app directory terminal to make server and then attached your ip where api call on ReviewScreen.js and then you use api to send data or post your job 
+## Run this command on your app directory terminal to make server and then attached your ip where api call on ReviewScreen.js and then you use api to send data or post your job
 
 npm install -g json-server
 

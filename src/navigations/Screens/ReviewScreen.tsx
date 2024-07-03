@@ -35,7 +35,6 @@ const ReviewScreen: React.FC<{route: {params: RouteParams}}> = ({route}) => {
   const navigation = useNavigation<NavigationType>();
   const [isLoading, setIsLoading] = useState(false);
   const {jobData} = route.params;
-  console.log(jobData);
 
   const handleBack = () => {
     setCurrentStep(currentStep - 1);
@@ -45,7 +44,7 @@ const ReviewScreen: React.FC<{route: {params: RouteParams}}> = ({route}) => {
   const submitJob = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('http://192.168.23.16:3000/jobs', {
+      const response = await fetch('http://192.168.100.38:3000/jobs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

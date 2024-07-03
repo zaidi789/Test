@@ -1,5 +1,10 @@
-import React, { createContext, useState, useContext, ReactNode, FunctionComponent } from 'react';
-
+import React, {
+  createContext,
+  useState,
+  useContext,
+  ReactNode,
+  FunctionComponent,
+} from 'react';
 
 interface StepContextType {
   currentStep: number;
@@ -12,11 +17,13 @@ interface StepProviderProps {
   children: ReactNode;
 }
 
-export const StepProvider: FunctionComponent<StepProviderProps> = ({ children }) => {
-  const [currentStep, setCurrentStep] = useState<number>(1); 
+export const StepProvider: FunctionComponent<StepProviderProps> = ({
+  children,
+}) => {
+  const [currentStep, setCurrentStep] = useState<number>(1);
 
   return (
-    <StepContext.Provider value={{ currentStep, setCurrentStep }}>
+    <StepContext.Provider value={{currentStep, setCurrentStep}}>
       {children}
     </StepContext.Provider>
   );
